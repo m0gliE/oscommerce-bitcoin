@@ -1,25 +1,25 @@
-osCommerce Bitcoin Payment Module v0.6
+osCommerce Fastcoin Payment Module v0.6
 
-This module enables your osCommerce webstore to accept Bitcoin. 
+This module enables your osCommerce webstore to accept Fastcoin. 
 
-IMPORTANT: This module is currently under development and works with BTC as the default currency only.
+IMPORTANT: This module is currently under development and works with FST as the default currency only.
 
 
 Features:
 
 * Creates a unique payment address for each order
-* Automatically updates BTCUSD exchange rate
-* Updates order to Processing when payment is received (# of Bitcoin network confirmations is configurable)
-* Forwards excess bitcoins to your off-server forwarding address
-* Python script restarts bitcoind if it becomes unresponsive
-* Bitcoind and monitor.py can be run on a server other than the osCommerce hosting server
+* Automatically updates FSTUSD exchange rate
+* Updates order to Processing when payment is received (# of Fastcoin network confirmations is configurable)
+* Forwards excess fastcoins to your off-server forwarding address
+* Python script restarts fastcoind if it becomes unresponsive
+* Fastcoind and monitor.py can be run on a server other than the osCommerce hosting server
 
 
 Requirements:
 
 osCommerce (tested so far only with v2.3.1)
 Python with modules: MySQLdb and simplejson
-bitcoind
+fastcoind
 
 
 Installation:
@@ -28,24 +28,24 @@ Installation:
 the existing one so if you or any addons have modified that page, you'll want to merge 
 our changes).
 
-2. Enable Bitcoin Payment module
+2. Enable Fastcoin Payment module
 
-3. Fill in bitcoind RPC host:port, user, password, and create a random notification key
+3. Fill in fastcoind RPC host:port, user, password, and create a random notification key
 
-4. Create BTC currency in osCommerce administration -> Localization -> Currencies with 
-the following settings. For Value enter # of BTC a USD would buy you.
+4. Create FST currency in osCommerce administration -> Localization -> Currencies with 
+the following settings. For Value enter # of FST a USD would buy you.
 
-Title: Bitcoin
-Code: BTC
+Title: Fastcoin
+Code: FST
 Symbol Left:
-Symbol Right: BTC
+Symbol Right: FST
 Decimal Point: .
 Thousands Point: ,
 Decimal Places: 3
 
 5. Recommended: Install the Display Totals in Default Currency addon from 
 http://www.oscommerce.com/community/contributions,3333 and make the modifications 
-listed in this post: https://bitcointalk.org/index.php?topic=67166.msg791064#msg791064
+listed in this post: https://fastcointalk.org/index.php?topic=67166.msg791064#msg791064
 
 6. Move ./script folder to your preferred location for Python scripts (preferably 
 outside the web root)
@@ -53,8 +53,8 @@ outside the web root)
 6. Copy ./script/default_settings.py to ./script/settings.py and configure at least 
 BASE_PATH and OSC_URL
 
-7. Make sure bitcoind is running, is in the path, and has an rpcuser and rpcpassword set 
-in .bitcoin/bitcoin.conf
+7. Make sure fastcoind is running, is in the path, and has an rpcuser and rpcpassword set 
+in .fastcoin/fastcoin.conf
 
 8. Start monitor.py:
 
@@ -67,4 +67,4 @@ Todo:
 * Include a watchdog script to make sure monitor.py is running via cronjob.
 
 Inspired by http://addons.oscommerce.com/info/8170 by phoenix.x742 / 2 Oct 2011
-bpn.php modified from an osCommerce Paypal IPN script
+fpn.php modified from an osCommerce Paypal IPN script
