@@ -71,7 +71,7 @@
 <div class="contentContainer">
   <div class="contentText">
     <?php 
-	if( $orders['payment_method'] == "Bitcoin Payment" ) {
+	if( $orders['payment_method'] == "Fastcoin Payment" ) {
     		$amount_query = tep_db_query("select text from " . TABLE_ORDERS_TOTAL . " where orders_id = '" . (int)$orders['orders_id'] . "' and class = 'ot_total'");
     		$payment_amount = tep_db_fetch_array($amount_query);
     		$payment_address_query = tep_db_query("select comments from " . TABLE_ORDERS_STATUS_HISTORY . " where orders_id = '" . (int)$orders['orders_id'] . "'");

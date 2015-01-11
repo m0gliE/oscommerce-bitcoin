@@ -31,20 +31,20 @@ OSC_URL = 'http://localhost/oscommerce/catalog'
 #
 
 #  Minimum confirmations to consider a payment received
-MINCONF = 6
+MINCONF = 4
 
 #  The time in seconds to wait between attempts to process incoming payments
 #  With each confirmation taking on average 10 minutes, settings this to
 #  MINCONF * 150 is reasonable (25% of expected confirmation time).
-REFRESH_PERIOD = 900
+REFRESH_PERIOD = 48
 
 #  How often to update exchange rate as a multiple of REFRESH_PERIOD. For 
 #  example, if REFRESH_PERIOD is 900 (15 minutes), setting this to 4 will
 #  cause the exchange rate to be updated hourly.
 REFRESHES_TO_UPDATE_PRICE = 4
 
-#  If a forwarding address is set, the script will send all bitcoins to
-#  this address once 6 confirmations have elapsed.
+#  If a forwarding address is set, the script will send all fastcoins to
+#  this address once 4 confirmations have elapsed.
 FORWARDING_ADDRESS = ''
 
 #  This script will only forward payments if more than this amount has been received
@@ -53,5 +53,5 @@ FORWARDING_MINIMUM = 1
 #  Leave this amount on this machine
 FORWARDING_KEEP_LOCAL = 0
 
-#  The transaction fee specified in your bitcoin settings
+#  The transaction fee specified in your fastcoin settings
 TRANSACTION_FEE = 0
